@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:views="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             x:Class="Paint.MainPage">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*" />
+            <RowDefinition Height="9*" />
+
+        </Grid.RowDefinitions>
+
+        <StackLayout Grid.Row="0" Orientation="Horizontal">
+            <Button Text="Load Image" Clicked="Button_Clicked_1" />
+            <Button Text="Redo" Clicked="BtnNext_Clicked"  />
+            <Button Text="Undo" Clicked="BtnBack_Clicked" />
+            <Button Text="Clean" Clicked="Button_Clicked" />
+            <Button Text="Save" Clicked="Button_Clicked_2" />
+        </StackLayout>
+
+
+        <views:SKCanvasView x:Name="skC" 
+                            Grid.Row="1" 
+                            PaintSurface="OnPainting"
+                            EnableTouchEvents="True" Touch="OnTouch"   />
+    </Grid>
+
+</ContentPage>
