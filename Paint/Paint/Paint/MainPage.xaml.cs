@@ -209,16 +209,28 @@ namespace Paint
 
         private async void Button_Clicked_1(object sender, EventArgs e)
         {
-            imageLoaded = await mediaHelper.TakePhotoAsync();
 
             if (senderSK != null)
+            {
+                imageLoaded = await mediaHelper.TakePhotoAsync();
                 senderSK.InvalidateSurface();
+            }
+            else
+                await DisplayAlert("Alert", "Click in the view paint, before add image", "Ok");
+
         }
 
         private async void Button_Clicked_2(object sender, EventArgs e)
         {
-            byte[] data = pngImage.ToArray();
-            await mediaHelper.SaveImage(data, "L", "emy.jpg");
+            if (pngImage != null)
+            {
+                byte[] data = pngImage.ToArray();
+                await mediaHelper.SaveImage(data, "L", "emy.jpg");
+            }
+            else
+            {
+                await DisplayAlert("Alert", "Image no saved.", "Ok");
+            }
         }
     }
 }
