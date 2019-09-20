@@ -24,6 +24,8 @@ namespace Paint
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
+     
+
         private LinkedList<AllPath> AllPaths = new LinkedList<AllPath>();
         private LinkedListNode<AllPath> current = null;
 

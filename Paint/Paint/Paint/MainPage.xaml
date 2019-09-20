@@ -24,7 +24,7 @@
 
 
         <views:SKCanvasView x:Name="skC" 
-                            Grid.Row="1" 
+                            Grid.Row="2" 
                             PaintSurface="OnPainting"
                             EnableTouchEvents="True" Touch="OnTouch"   />
     </Grid>

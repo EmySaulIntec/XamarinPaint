@@ -11,4 +11,14 @@
     <PackageReference Include="Xamarin.Forms" Version="4.3.0.778476-pre1" />
     <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
   </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\PaintPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
 </Project>

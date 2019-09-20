@@ -29,7 +29,7 @@ namespace Paint.Utils
         {
             return ImageSource.FromFile(path);
         }
-        public async Task<ImagePhoto> TakePhotoAsync(bool camera = false)
+        public async Task<ImagePhoto> TakePhotoAsync(bool camera = false, PhotoSize photoSize =  PhotoSize.Medium)
         {
             await CrossMedia.Current.Initialize();
 
@@ -46,12 +46,12 @@ namespace Paint.Utils
                     Directory = "Pictures",
                     Name = "test.jpg",
                     SaveToAlbum = true,
-                    PhotoSize = PhotoSize.Medium
+                    PhotoSize = photoSize
                 });
             else
                 file = await CrossMedia.Current.PickPhotoAsync(new Plugin.Media.Abstractions.PickMediaOptions()
                 {
-                    PhotoSize = PhotoSize.Medium
+                    PhotoSize = photoSize
                 });
 
             if (file == null)
